@@ -38,7 +38,7 @@ namespace LogicUI.FancyTextRendering
             public bool UseCustomFont = true;
 
             [ShowIf(EConditionOperator.And, nameof(RenderMonospace), nameof(UseCustomFont)), AllowNesting]
-            public string FontAssetPathRelativeToResources = "Noto/Noto Mono/_NotoSansMono - Master";
+            public string FontAssetPathRelativeToResources = "Noto/Noto Mono/NotoMono-Regular";
 
             [Space]
             [ShowIf(nameof(RenderMonospace)), AllowNesting]
