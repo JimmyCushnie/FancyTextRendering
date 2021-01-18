@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb87846e43a704469d9be7ef4faa09a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Source: '# FancyTextRenderer
+  _Source: '# FancyTextRendering
 
 
     It''s some code to render markdown & clickable
@@ -423,7 +423,7 @@ MonoBehaviour:
     lists are also supported :D
 
 
-    1. If you use one for every number, the list
+    1. If you use "1" for every number, the list
     is auto-numbered, in keeping with standard markdown rules.
 
     1. This makes
@@ -434,14 +434,15 @@ MonoBehaviour:
     manually, that is also supported.
 
 
-    10. See, like in this list!
+    See, like in this list:
 
-    11.
-    This is an intentional difference from the markdown spec.
 
-    100. I often see
-    folks get confused by Markdown''s list auto-numbering, and this change should
-    ensure that the feature only applies to folks who know what they''re doing.
+    69. This
+    is an intentional difference from the markdown spec.
+
+    420. I often see folks
+    get confused by Markdown''s list auto-numbering, and this change should ensure
+    that the feature only applies to folks who know what they''re doing.
 
 
     ###
@@ -524,26 +525,27 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<voffset=0.7em><u><b><size=2em>FancyTextRenderer</size></b></u></voffset>\r\nIt's
+  m_text: "<voffset=0.7em><u><b><size=2em>FancyTextRendering</size></b></u></voffset>\r\nIt's
     some code to render markdown & clickable links in Unity. How fun!\r\n\r\n<voffset=0.3em><u><b><size=1.7em>We
     got multiple levels of headers</size></b></u></voffset>\r\nIsn't that neat.\r\n\r\nAnywho,
     we've got all your standard Markdown features. You can make stuff <i>italic</i>
     or <b>bold</b>, or even <i><b>both simultaneously</b></i>. You can cross out
     stuff with <s>strikethrough</s> or make it codey with <space=0.3em><font=\"Noto/Noto
     Mono/NotoMono-Regular\"><mark=#0000003C padding=\"25,25,0,0\">monospace</font></mark><space=0.3em>.\r\n\r\n<b><size=1.5em>Lists!</size></b>\r\nBoy
-    oh boy do we have lists!\r\n<voffset=-0.76em><line-height=0%><width=100><align=right>\u2022</width></align>\n</line-height><indent=120>Unordered
-    lists that use bullet points!</indent></voffset>\r\n<line-height=0%><width=100><align=right>\u2022</width></align>\n</line-height><indent=120>See,
-    it's another item in the list!</indent>\r\n<voffset=0.76em><line-height=0%><width=100><align=right>\u2022</width></align>\n</line-height><indent=120>Wowee,
-    another one!!!</indent></voffset>\r\nOrdered lists are also supported :D\r\n<voffset=-0.76em><line-height=0%><width=100><align=right>1.</width></align>\n</line-height><indent=120>If
-    you use one for every number, the list is auto-numbered, in keeping with standard
-    markdown rules.</indent></voffset>\r\n<line-height=0%><width=100><align=right>2.</width></align>\n</line-height><indent=120>This
+    oh boy do we have lists!\r\n<line-height=0.76em></line-height>\n<line-height=0%><width=100><align=right>\u2022</width></align>\n</line-height><indent=120>Unordered
+    lists that use bullet points!</indent>\r\n<line-height=0%><width=100><align=right>\u2022</width></align>\n</line-height><indent=120>See,
+    it's another item in the list!</indent>\r\n<line-height=0%><width=100><align=right>\u2022</width></align>\n</line-height><indent=120>Wowee,
+    another one!!!</indent>\n<line-height=0.76em></line-height>\r\nOrdered lists
+    are also supported :D\r\n<line-height=0.76em></line-height>\n<line-height=0%><width=100><align=right>1.</width></align>\n</line-height><indent=120>If
+    you use \"1\" for every number, the list is auto-numbered, in keeping with standard
+    markdown rules.</indent>\r\n<line-height=0%><width=100><align=right>2.</width></align>\n</line-height><indent=120>This
     makes it easy to insert an item in the list without having to update the number
-    for every single item in the list.</indent>\r\n<voffset=0.76em><line-height=0%><width=100><align=right>3.</width></align>\n</line-height><indent=120>But
-    if you want to control the numbers manually, that is also supported.</indent></voffset>\r\n<voffset=-0.76em><line-height=0%><width=100><align=right>10.</width></align>\n</line-height><indent=120>See,
-    like in this list!</indent></voffset>\r\n<line-height=0%><width=100><align=right>11.</width></align>\n</line-height><indent=120>This
-    is an intentional difference from the markdown spec.</indent>\r\n<voffset=0.76em><line-height=0%><width=100><align=right>100.</width></align>\n</line-height><indent=120>I
+    for every single item in the list.</indent>\r\n<line-height=0%><width=100><align=right>3.</width></align>\n</line-height><indent=120>But
+    if you want to control the numbers manually, that is also supported.</indent>\n<line-height=0.76em></line-height>\r\nSee,
+    like in this list:\r\n<line-height=0.76em></line-height>\n<line-height=0%><width=100><align=right>69.</width></align>\n</line-height><indent=120>This
+    is an intentional difference from the markdown spec.</indent>\r\n<line-height=0%><width=100><align=right>420.</width></align>\n</line-height><indent=120>I
     often see folks get confused by Markdown's list auto-numbering, and this change
-    should ensure that the feature only applies to folks who know what they're doing.</indent></voffset>\r\n<b><size=1.5em>Links!</size></b>\r\nHTTP
+    should ensure that the feature only applies to folks who know what they're doing.</indent>\n<line-height=0.76em></line-height>\r\n<b><size=1.5em>Links!</size></b>\r\nHTTP
     and HTTPS links are automatically detected and added, like so: <color=#1D7CEAFF><link=\"http://isitwednesday.info/.\">http://isitwednesday.info/.</link></color>
     We also have inlike links, <color=#1D7CEAFF><link=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\">like
     this</link></color>.\r\n"
@@ -1051,22 +1053,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "# FancyTextRenderer\n\nIt's some code to render markdown & clickable links
-    in Unity. How fun!\n\n## We got multiple levels of headers\n\nIsn't that neat.\n\nAnywho,
-    we've got all your standard Markdown features. You can make stuff *italic* or
-    **bold**, or even ***both simultaneously***. You can cross out stuff with ~~strikethrough~~
-    or make it codey with `monospace`.\n\n### Lists!\n\nBoy oh boy do we have lists!\n\n*
-    Unordered lists that use bullet points!\n* See, it's another item in the list!\n*
-    Wowee, another one!!!\n\nOrdered lists are also supported :D\n\n1. If you use
-    one for every number, the list is auto-numbered, in keeping with standard markdown
-    rules.\n1. This makes it easy to insert an item in the list without having to
-    update the number for every single item in the list.\n1. But if you want to control
-    the numbers manually, that is also supported.\n\n10. See, like in this list!\n11.
-    This is an intentional difference from the markdown spec.\n100. I often see folks
-    get confused by Markdown's list auto-numbering, and this change should ensure
-    that the feature only applies to folks who know what they're doing.\n\n### Links!\n\nHTTP
-    and HTTPS links are automatically detected and added, like so: http://isitwednesday.info/.
-    We also have inlike links, [like this](https://www.youtube.com/watch?v=dQw4w9WgXcQ).\u200B"
+  m_text: "# FancyTextRendering\n\nIt's some code to render markdown & clickable
+    links in Unity. How fun!\n\n## We got multiple levels of headers\n\nIsn't that
+    neat.\n\nAnywho, we've got all your standard Markdown features. You can make
+    stuff *italic* or **bold**, or even ***both simultaneously***. You can cross
+    out stuff with ~~strikethrough~~ or make it codey with `monospace`.\n\n### Lists!\n\nBoy
+    oh boy do we have lists!\n\n* Unordered lists that use bullet points!\n* See,
+    it's another item in the list!\n* Wowee, another one!!!\n\nOrdered lists are
+    also supported :D\n\n1. If you use \"1\" for every number, the list is auto-numbered,
+    in keeping with standard markdown rules.\n1. This makes it easy to insert an
+    item in the list without having to update the number for every single item in
+    the list.\n1. But if you want to control the numbers manually, that is also supported.\n\nSee,
+    like in this list:\n\n69. This is an intentional difference from the markdown
+    spec.\n420. I often see folks get confused by Markdown's list auto-numbering,
+    and this change should ensure that the feature only applies to folks who know
+    what they're doing.\n\n### Links!\n\nHTTP and HTTPS links are automatically detected
+    and added, like so: http://isitwednesday.info/. We also have inlike links, [like
+    this](https://www.youtube.com/watch?v=dQw4w9WgXcQ).\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c5de1d72870539946acbeda8bed412ec, type: 2}
   m_sharedMaterial: {fileID: -7809948095054474158, guid: c5de1d72870539946acbeda8bed412ec, type: 2}
@@ -1340,7 +1343,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: '# FancyTextRenderer
+  m_Text: '# FancyTextRendering
 
 
     It''s some code to render markdown & clickable
@@ -1378,7 +1381,7 @@ MonoBehaviour:
     lists are also supported :D
 
 
-    1. If you use one for every number, the list
+    1. If you use "1" for every number, the list
     is auto-numbered, in keeping with standard markdown rules.
 
     1. This makes
@@ -1389,14 +1392,15 @@ MonoBehaviour:
     manually, that is also supported.
 
 
-    10. See, like in this list!
+    See, like in this list:
 
-    11.
-    This is an intentional difference from the markdown spec.
 
-    100. I often see
-    folks get confused by Markdown''s list auto-numbering, and this change should
-    ensure that the feature only applies to folks who know what they''re doing.
+    69. This
+    is an intentional difference from the markdown spec.
+
+    420. I often see folks
+    get confused by Markdown''s list auto-numbering, and this change should ensure
+    that the feature only applies to folks who know what they''re doing.
 
 
     ###
