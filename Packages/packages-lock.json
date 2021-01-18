@@ -12,7 +12,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "021b7bea48471e380ad70eb1fbb912e9925512e8"
+      "hash": "97ffddffc04cf7ece5e48745ce0be102d965d9af"
     },
     "com.unity.textmeshpro": {
       "version": "3.0.3",

@@ -94,48 +94,26 @@ lineNotPartOfList:
             {
                 int listStartLineIndex = listEndLineIndex - listLineCount;
 
-                if (listStartLineIndex == listEndLineIndex) // Single-line list
+                // If the list doesn't start on the first line, add whitespace before the first list line.
+                if (listStartLineIndex > 0)
                 {
-                    // If the list isn't on the first line, make it offset down.
-                    if (listStartLineIndex > 0)
-                    {
-                        StringBuilder thisLineBuilder = lines[listStartLineIndex].Builder;
-                        thisLineBuilder.PrependChain("<voffset=-", settings.Lists.VerticalOffset.ToString(), "em>");
-                        thisLineBuilder.Append("</voffset>");
-                    }
-
-                    // If the list isn't on the last line, make the next line offset down.
-                    if (listStartLineIndex < lines.Count - 1)
-                    {
-                        StringBuilder lastLineBuilder = lines[listStartLineIndex + 1].Builder;
-                        lastLineBuilder.PrependChain("<voffset=-", settings.Lists.VerticalOffset.ToString(), "em>");
-                        lastLineBuilder.Append("</voffset>");
-                    }
+                    StringBuilder firstLineBuilder = lines[listStartLineIndex].Builder;
+                    firstLineBuilder.PrependChain("<line-height=", settings.Lists.VerticalOffset.ToString(), "em></line-height>", "\n");
                 }
-                else
+
+                // If the list doesn't end on the last line, add whitespace after the last line.
+                if (listEndLineIndex < lines.Count - 1)
                 {
-                    // If the list doesn't start on the first line, make the first list line offset down.
-                    if (listStartLineIndex > 0)
-                    {
-                        StringBuilder firstLineBuilder = lines[listStartLineIndex].Builder;
-                        firstLineBuilder.PrependChain("<voffset=-", settings.Lists.VerticalOffset.ToString(), "em>");
-                        firstLineBuilder.Append("</voffset>");
-                    }
-
-                    // If the list doesn't end on the last line, make the last list line offset up.
-                    if (listEndLineIndex < lines.Count - 1)
-                    {
-                        StringBuilder lastLineBuilder = lines[listEndLineIndex].Builder;
-                        lastLineBuilder.PrependChain("<voffset=", settings.Lists.VerticalOffset.ToString(), "em>");
-                        lastLineBuilder.Append("</voffset>");
-                    }
+                    StringBuilder lastLineBuilder = lines[listEndLineIndex].Builder;
+                    lastLineBuilder.AppendChain("\n", "<line-height=", settings.Lists.VerticalOffset.ToString(), "em></line-height>");
                 }
+
 
                 // Remove extra whitespace before and after the list.
 
                 for (int i = listStartLineIndex - 1; i > 0; i--)
                 {
-                    // The use of IsEmpty() instead of IsEmptyOrWhitespace() is intentional. It allows you to vertically offset the lists by putting
+                    // The use of IsEmpty() instead of IsEmptyOrWhitespace() is intentional. It allows you to manually add vertical offset to lists by putting
                     // a single space on the line. However, this is a deviation from standard markdown implementations.
                     if (lines[i].Builder.IsEmpty())
                         lines[i].DeleteLineAfterProcessing = true;
