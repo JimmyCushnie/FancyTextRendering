@@ -3,7 +3,7 @@ Render markdown & clickable links with TextMeshPro in Unity.
 
 ![demo.png](_img/demo.png)
 
-![inspector example.png](_img/inspector example.png)
+![inspector example.png](_img/inspector-example.png)
 
 Try it yourself -- check out the [live demo!](https://jimmycushnie.itch.io/fancytextrendering-demo)
 
