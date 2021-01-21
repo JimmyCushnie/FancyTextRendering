@@ -44,9 +44,9 @@ If you have a bug report or feature request, please put it on the [issues page](
 
 1. Start with a TextMeshPro GameObject (it can be the one used in the steps above)
 1. Give the text some links, either directly using TMP's `<link>` tag or by using a MarkdownRenderer
-1. Add the Text Link Helper component
+1. Add the TextLinkHelper component
 1. Adjust link color properties to preference
-1. Optional: add the Simple Link Behavior component to make the links actually do something when you click on them
+1. Optional: add the SimpleLinkBehavior component to make the links actually do something when you click on them
 
 ## Dependencies
 
