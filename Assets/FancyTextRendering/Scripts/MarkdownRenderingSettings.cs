@@ -153,6 +153,9 @@ namespace LogicUI.FancyTextRendering
         [Serializable] public class SuperscriptSettings
         {
             public bool RenderSuperscript = true;
+
+            [ShowIf(nameof(RenderSuperscript)), AllowNesting]
+            public bool RenderChainSuperscript = true;
         }
     }
 }

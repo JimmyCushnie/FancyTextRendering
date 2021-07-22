@@ -93,6 +93,7 @@ namespace LogicUI.FancyTextRendering
 
         private static readonly IReadOnlyList<MarkdownLineProcessorBase> LineProcessors = new MarkdownLineProcessorBase[]
         {
+            // Order of processing here does matter, be mindful when adding to this list.
             new AutoLinksHttp(),
             new AutoLinksHttps(),
             new UnorderedLists(),
@@ -100,10 +101,11 @@ namespace LogicUI.FancyTextRendering
             new Bold(),
             new Italics(),
             new Strikethrough(),
+            new SuperscriptChain(), // Important to process chain before single!
+            new SuperscriptSingle(),
             new Monospace(),
             new Headers(),
             new Links(),
-            new Superscript(),
         };
     }
 }

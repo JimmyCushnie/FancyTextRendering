@@ -40,7 +40,8 @@ namespace LogicUI.FancyTextRendering.MarkdownLogic
 
     class Monospace : MarkdownTag
     {
-        protected override string GetMarkdownIndicator(MarkdownRenderingSettings _) => "`";
+        protected override string GetMarkdownOpenTag(MarkdownRenderingSettings settings) => "`";
+        protected override string GetMarkdownCloseTag(MarkdownRenderingSettings settings) => "`";
 
         // Optimization not critical, as this is only called once per markdown render
         protected override string GetRichTextOpenTag(MarkdownRenderingSettings settings)
@@ -91,15 +92,34 @@ namespace LogicUI.FancyTextRendering.MarkdownLogic
             => settings.Monospace.RenderMonospace;
     }
     
-    class Superscript : SimpleAsymmetricMarkdownTag
+
+    class SuperscriptSingle : MarkdownTag
     {
-        protected override string MarkdownIndicator => "^";
-        protected override string RichTextOpenTag => "<sup>";
-        protected override string RichTextCloseTag => "</sup>";
-
-        protected override char? IgnoreContents => '^';
-
         protected override bool AllowedToProces(MarkdownRenderingSettings settings)
             => settings.Superscript.RenderSuperscript;
+
+
+        protected override string GetMarkdownOpenTag(MarkdownRenderingSettings settings) => "^";
+        protected override string GetMarkdownCloseTag(MarkdownRenderingSettings settings) => " ";
+
+        protected override string GetRichTextOpenTag(MarkdownRenderingSettings settings) => "<sup>";
+        protected override string GetRichTextCloseTag(MarkdownRenderingSettings settings) => "</sup> ";
+
+
+        protected override char? IgnoreContents => '^';
+        protected override bool TreatLineEndAsCloseTag => true;
+    }
+    
+    class SuperscriptChain : MarkdownTag
+    {
+        protected override bool AllowedToProces(MarkdownRenderingSettings settings)
+            => settings.Superscript.RenderSuperscript && settings.Superscript.RenderChainSuperscript;
+
+
+        protected override string GetMarkdownOpenTag(MarkdownRenderingSettings settings) => "^(";
+        protected override string GetMarkdownCloseTag(MarkdownRenderingSettings settings) => ")";
+
+        protected override string GetRichTextOpenTag(MarkdownRenderingSettings settings) => "<sup>";
+        protected override string GetRichTextCloseTag(MarkdownRenderingSettings settings) => "</sup>";
     }
 }
