@@ -90,4 +90,28 @@ namespace LogicUI.FancyTextRendering.MarkdownLogic
         protected override bool AllowedToProces(MarkdownRenderingSettings settings)
             => settings.Monospace.RenderMonospace;
     }
+    
+    class Superscript : SimpleAsymmetricMarkdownTag
+    {
+        protected override string MarkdownIndicator => "^";
+        protected override string RichTextOpenTag => "<sup>";
+        protected override string RichTextCloseTag => "</sup>";
+
+        protected override char? IgnoreContents => '^';
+
+        protected override bool AllowedToProces(MarkdownRenderingSettings settings)
+            => settings.Superscript.RenderSuperscript;
+    }
+    
+    class Subscript : SimpleAsymmetricMarkdownTag
+    {
+        protected override string MarkdownIndicator => "_";
+        protected override string RichTextOpenTag => "<sub>";
+        protected override string RichTextCloseTag => "</sub>";
+
+        protected override char? IgnoreContents => '^';
+
+        protected override bool AllowedToProces(MarkdownRenderingSettings settings)
+            => settings.Subscript.RenderSubscript;
+    }
 }
