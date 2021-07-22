@@ -340,8 +340,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1860940793}
   m_HandleRect: {fileID: 1860940792}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.8754022
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -613,7 +613,21 @@ MonoBehaviour:
 
 
     HTTP and HTTPS links are automatically detected and added, like
-    so: http://isitwednesday.info/. We also have inlike links, [like this](https://www.youtube.com/watch?v=dQw4w9WgXcQ).'
+    so: http://isitwednesday.info/. We also have inlike links, [like this](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
+
+
+    ###
+    Superscript!
+
+
+    We got super^script! We got super^(script but it''s long!)
+
+
+    ###
+    Escapes!
+
+
+    You can \*escape* control characters with a backslash. Regular\^script!'
   RenderSettings:
     Bold:
       RenderBold: 1
@@ -713,7 +727,9 @@ MonoBehaviour:
     should ensure that the feature only applies to folks who know what they're doing.</indent>\n<line-height=0.76em></line-height>\r\n<b><size=1.5em>Links!</size></b>\r\nHTTP
     and HTTPS links are automatically detected and added, like so: <color=#1D7CEAFF><link=\"http://isitwednesday.info/.\">http://isitwednesday.info/.</link></color>
     We also have inlike links, <color=#1D7CEAFF><link=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\">like
-    this</link></color>.\r\n"
+    this</link></color>.\r\n\r\n<b><size=1.5em>Superscript!</size></b>\r\nWe got
+    super<sup>script!</sup> We got super<sup>script but it's long!</sup>\r\n\r\n<b><size=1.5em>Escapes!</size></b>\r\nYou
+    can *escape* control characters with a backslash. Regular^script!\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a38843dbb13c23940ae5adfe0936b68e, type: 2}
   m_sharedMaterial: {fileID: 6588039389402685758, guid: a38843dbb13c23940ae5adfe0936b68e, type: 2}
@@ -1369,7 +1385,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1248535717}
   m_Direction: 3
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.93606526
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1575,7 +1591,9 @@ MonoBehaviour:
     and this change should ensure that the feature only applies to folks who know
     what they're doing.\n\n### Links!\n\nHTTP and HTTPS links are automatically detected
     and added, like so: http://isitwednesday.info/. We also have inlike links, [like
-    this](https://www.youtube.com/watch?v=dQw4w9WgXcQ).\u200B"
+    this](https://www.youtube.com/watch?v=dQw4w9WgXcQ).\n\n### Superscript!\n\nWe
+    got super^script! We got super^(script but it's long!)\n\n### Escapes!\n\nYou
+    can \\*escape* control characters with a backslash. Regular\\^script!\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c5de1d72870539946acbeda8bed412ec, type: 2}
   m_sharedMaterial: {fileID: -7809948095054474158, guid: c5de1d72870539946acbeda8bed412ec, type: 2}
@@ -2067,7 +2085,21 @@ MonoBehaviour:
 
 
     HTTP and HTTPS links are automatically detected and added, like
-    so: http://isitwednesday.info/. We also have inlike links, [like this](https://www.youtube.com/watch?v=dQw4w9WgXcQ).'
+    so: http://isitwednesday.info/. We also have inlike links, [like this](https://www.youtube.com/watch?v=dQw4w9WgXcQ).
+
+
+    ###
+    Superscript!
+
+
+    We got super^script! We got super^(script but it''s long!)
+
+
+    ###
+    Escapes!
+
+
+    You can \*escape* control characters with a backslash. Regular\^script!'
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 4
   m_ReadOnly: 0
