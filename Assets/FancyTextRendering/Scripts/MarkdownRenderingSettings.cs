@@ -154,11 +154,5 @@ namespace LogicUI.FancyTextRendering
         {
             public bool RenderSuperscript = true;
         }
-        
-        public SubcriptSettings Subscript = new SubcriptSettings();
-        [Serializable] public class SubcriptSettings
-        {
-            public bool RenderSubscript = true;
-        }
     }
 }

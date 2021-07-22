@@ -104,7 +104,6 @@ namespace LogicUI.FancyTextRendering
             new Headers(),
             new Links(),
             new Superscript(),
-            new Subscript(),
         };
     }
 }
