@@ -23,9 +23,9 @@ namespace LogicUI.FancyTextRendering
         public static void RenderToTextMesh(string markdownSource, TMP_Text textMesh)
             => RenderToTextMesh(markdownSource, textMesh, MarkdownRenderingSettings.Default);
 
-        public static void RenderToTextMesh(string markdownSource, TMP_Text textMesh, MarkdownRenderingSettings settings)
+        public static void RenderToTextMesh(string markdownSource, TMP_Text textMesh, MarkdownRenderingSettings settings, params ICustomTextPreProcessor[] customTextPreProcessors)
         {
-            string richText = MarkdownToRichText(markdownSource, settings);
+            string richText = MarkdownToRichText(markdownSource, settings, customTextPreProcessors);
 
             textMesh.text = richText;
             UpdateTextMesh(textMesh);
@@ -53,7 +53,7 @@ namespace LogicUI.FancyTextRendering
         public static string MarkdownToRichText(string source)
             => MarkdownToRichText(source, MarkdownRenderingSettings.Default);
 
-        public static string MarkdownToRichText(string source, MarkdownRenderingSettings settings)
+        public static string MarkdownToRichText(string source, MarkdownRenderingSettings settings, params ICustomTextPreProcessor[] customTextPreProcessors)
         {
             if (source.IsNullOrEmpty())
                 return String.Empty;
@@ -75,7 +75,14 @@ namespace LogicUI.FancyTextRendering
             }
 
 
-            foreach (var processor in LineProcessors)
+            foreach (var processor in customTextPreProcessors)
+            {
+                foreach (var line in lines)
+                    processor.ProcessLine(line.Builder);
+            }
+
+
+            foreach (var processor in BuiltInLineProcessors)
                 processor.Process(lines, settings);
 
 
@@ -91,7 +98,7 @@ namespace LogicUI.FancyTextRendering
         }
 
 
-        private static readonly IReadOnlyList<MarkdownLineProcessorBase> LineProcessors = new MarkdownLineProcessorBase[]
+        private static readonly IReadOnlyList<MarkdownLineProcessorBase> BuiltInLineProcessors = new MarkdownLineProcessorBase[]
         {
             // Order of processing here does matter, be mindful when adding to this list.
             new AutoLinksHttp(),
