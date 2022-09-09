@@ -121,8 +121,7 @@ namespace LogicUI.FancyTextRendering.MarkdownLogic
                             break;
                     }
 
-                    if (!info.VerticalSpacing.IsPrettyCloseTo(0))
-                        builder_.PrependChain("<voffset=", info.VerticalSpacing.ToString(), "em>").Append("</voffset>");
+                    line_.AddVerticalWhitespaceAfter(info.VerticalSpacing);
                 }
             }
         }
