@@ -6,6 +6,7 @@ using JimmysUnityUtilities;
 using LogicUI.FancyTextRendering.MarkdownLogic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 namespace LogicUI.FancyTextRendering
 {
@@ -59,6 +60,8 @@ namespace LogicUI.FancyTextRendering
                 return String.Empty;
 
 
+            Profiler.BeginSample(nameof(MarkdownToRichText));
+
             var lines = new List<MarkdownLine>();
 
             using (var reader = new StringReader(source))
@@ -94,6 +97,7 @@ namespace LogicUI.FancyTextRendering
                     builder.AppendLine(line.Finish());
             }
 
+            Profiler.EndSample();
             return builder.ToString();
         }
 
