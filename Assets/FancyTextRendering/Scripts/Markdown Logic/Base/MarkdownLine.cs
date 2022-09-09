@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using JimmysUnityUtilities;
 
@@ -18,6 +19,21 @@ namespace LogicUI.FancyTextRendering.MarkdownLogic
             set => _DisableFutureProcessing = value;
         }
         private bool _DisableFutureProcessing;
+
+
+
+        // To create vertical whitespace, separating some text from the stuff above or below it, we have an empty line at a specific size.
+        // The line must have some contents for TMP to apply the custom size (I think this may be a TMP bug). Therefore the line contains a single zero-width space.
+        public void AddVerticalWhitespaceBefore(float spacingFontUnits)
+        {
+            if (!spacingFontUnits.IsPrettyCloseTo(0))
+                Builder.Prepend("<size=" + spacingFontUnits.ToString(CultureInfo.InvariantCulture) + "em>" + SpecialStrings.ZeroWidthSpace + "</size>\n");
+        }
+        public void AddVerticalWhitespaceAfter(float spacingFontUnits)
+        {
+            if (!spacingFontUnits.IsPrettyCloseTo(0))
+                Builder.Append("\n<size=" + spacingFontUnits.ToString(CultureInfo.InvariantCulture) + "em>" + SpecialStrings.ZeroWidthSpace + "</size>");
+        }
 
 
         public string Finish()

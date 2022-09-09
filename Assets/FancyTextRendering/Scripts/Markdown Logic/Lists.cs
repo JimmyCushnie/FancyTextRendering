@@ -96,17 +96,11 @@ lineNotPartOfList:
 
                 // If the list doesn't start on the first line, add whitespace before the first list line.
                 if (listStartLineIndex > 0)
-                {
-                    StringBuilder firstLineBuilder = lines[listStartLineIndex].Builder;
-                    firstLineBuilder.PrependChain("<line-height=", settings.Lists.VerticalOffset.ToString(), "em></line-height>", "\n");
-                }
+                    lines[listStartLineIndex].AddVerticalWhitespaceBefore(settings.Lists.VerticalOffset);
 
                 // If the list doesn't end on the last line, add whitespace after the last line.
                 if (listEndLineIndex < lines.Count - 1)
-                {
-                    StringBuilder lastLineBuilder = lines[listEndLineIndex].Builder;
-                    lastLineBuilder.AppendChain("\n", "<line-height=", settings.Lists.VerticalOffset.ToString(), "em></line-height>");
-                }
+                    lines[listEndLineIndex].AddVerticalWhitespaceAfter(settings.Lists.VerticalOffset);
 
 
                 // Remove extra whitespace before and after the list.
