@@ -112,7 +112,7 @@ namespace LogicUI.FancyTextRendering
             // Can't use ShowIf here yet -- https://github.com/dbrizov/NaughtyAttributes/issues/142
             public HeaderData[] Levels = new HeaderData[]
             {
-                new HeaderData(2f, true, true, 0.7f),
+                new HeaderData(2f, true, true, 0.45f),
                 new HeaderData(1.7f, true, true, 0.3f),
                 new HeaderData(1.5f, true, false),
                 new HeaderData(1.3f, true, false),
